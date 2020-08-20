@@ -21,11 +21,13 @@ public class StartProduction {
     public static void main(String[] args) {
         
         Queue<Integer> queue=new LinkedBlockingQueue<>();
+        Object mutex = new Object();
         
         
-        new Producer(queue,Long.MAX_VALUE).start();
+        new Producer(queue,5, mutex).start();
         
         //let the producer create products for 5 seconds (stock).
+        
         try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
@@ -33,7 +35,7 @@ public class StartProduction {
         }
         
         
-        new Consumer(queue).start();
+        new Consumer(queue, mutex).start();
     }
     
 

@@ -59,10 +59,10 @@ _Al pausar todos los demás hilos antes de imprimir los resultados actuales, e i
 **_Identifica posibles regiones críticas en lo que respecta a la lucha de los inmortales._**
 
 
-  *_Puede pasar que durante la pelea de jugadorX contra jugadorY, el jugadorX mate al jugadorY, pero que simultáneamente el jugadorY esté en una pelea y la gane, donde se presentaria que el jugadorY moriría, pero a la vez viviría. Acá es cuando ocurre el fenómeno de que los jugadores "reviven"._
+  * _Puede pasar que durante la pelea de jugadorX contra jugadorY, el jugadorX mate al jugadorY, pero que simultáneamente el jugadorY esté en una pelea y la gane, donde se presentaria que el jugadorY moriría, pero a la vez viviría. Acá es cuando ocurre el fenómeno de que los jugadores "reviven"._
   
   
-  *_Puede pasar que al momento de seleccionar a mi rival, hayan matado a este justo en ese momento, entonces se presentaría el fenómeno de que pelearía con un jugador que ya se encuentra muerto._
+  * _Puede pasar que al momento de seleccionar a mi rival, hayan matado a este justo en ese momento, entonces se presentaría el fenómeno de que pelearía con un jugador que ya se encuentra muerto._
   
 
 **_Una vez que se corrige el problema, rectifique que el programa continúa funcionando de manera consistente cuando se ejecutan 100, 1000 o 10000 inmortales._**
@@ -71,14 +71,20 @@ _El programa nunca se detuvo y siguió cumpliendo el invariante._
 
 
 **100 inmortales:**
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/7.png)
 
 
 **1000 inmortales:**
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/8.png)
 
 
 **10000 inmortales:**
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/9.png)
 
 
@@ -88,10 +94,14 @@ _Esto no crearía una condición de carrera en el programa pero sí una falla en
 
 
 **100000 inmortales:**
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/10.png)
 
 
 **1000000 inmortales:**
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/11.png)
 
 

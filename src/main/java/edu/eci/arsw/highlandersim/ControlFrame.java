@@ -76,8 +76,7 @@ public class ControlFrame extends JFrame {
                     for (Immortal im : immortals) {
                         im.start();
                     }
-                }
-
+                }                
                 btnStart.setEnabled(false);
 
             }
@@ -87,10 +86,11 @@ public class ControlFrame extends JFrame {
         JButton btnPauseAndCheck = new JButton("Pause and check");
         btnPauseAndCheck.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
-                /*
-				 * COMPLETAR
-                 */
+                
+                for(Immortal im: immortals) {
+                    im.pauseImmortal();
+                }
+                
                 int sum = 0;
                 for (Immortal im : immortals) {
                     sum += im.getHealth();
@@ -108,9 +108,12 @@ public class ControlFrame extends JFrame {
 
         btnResume.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                /**
-                 * IMPLEMENTAR
-                 */
+                synchronized (immortals){
+                    immortals.notifyAll();
+                }
+                for(Immortal im: immortals){
+                    im.resumeImmortal();
+                }
 
             }
         });
@@ -127,6 +130,14 @@ public class ControlFrame extends JFrame {
 
         JButton btnStop = new JButton("STOP");
         btnStop.setForeground(Color.RED);
+        btnStop.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                for(Immortal im: immortals){
+                    im.stopImmortal();
+                }                
+            }
+        
+        });
         toolBar.add(btnStop);
 
         scrollPane = new JScrollPane();

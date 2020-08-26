@@ -110,6 +110,11 @@ _Esto no crearía una condición de carrera en el programa pero sí una falla en
 
 _Implementamos la función STOP, con una bandera para saber si el juego se encuentra detenido, y cuando se encuentra la bandera de detenido verdadera, detenemos al método  run()._
 ### Pruebas ✅ 
+ * Debería cumplirse el invariante al pausar y al reiniciar, entonces se prueba el invariante junto a estas dos funciones. 
+ * Debería detenerse el juego y este no debería estar detenido al comenzar.
+ * Deberían eliminarse los jugadores muertos de la lista de jugadores y deberían volver nuevos jugadores al reiniciar el juego. 
+
+
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/12.png)
 ## ¡¡¡Compile and run instructions!!! 🛠️
 **_Para compilar:_**

@@ -26,15 +26,44 @@ public class ControlFrame extends JFrame {
 
     private static final int DEFAULT_IMMORTAL_HEALTH = 100;
     private static final int DEFAULT_DAMAGE_VALUE = 10;
-
     private JPanel contentPane;
-
     private List<Immortal> immortals;
-
     private JTextArea output;
     private JLabel statisticsLabel;
     private JScrollPane scrollPane;
     private JTextField numOfImmortals;
+
+    public void start(){
+        immortals = setupInmortals();
+        if (immortals != null) {
+            for (Immortal i : immortals) {
+                i.start();
+            }
+        }
+    }
+
+    public void pause(){
+        for (Immortal i : immortals) {
+            i.pauseImmortal();
+        }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
+    }
+
+    public void reiniciar(){
+        for (Immortal im : immortals) {
+            im.resumeImmortal();
+        }
+    }
+
+    public void detener(){
+        for (Immortal im: immortals){
+            im.stopImmortal();
+        }
+    }
 
     /**
      * Launch the application.
@@ -174,12 +203,40 @@ public class ControlFrame extends JFrame {
 
     }
 
+    public int getDefaultImmortalHealth() {
+        return DEFAULT_IMMORTAL_HEALTH;
+    }
+
+    public int getDefaultDamageValue() {
+        return DEFAULT_DAMAGE_VALUE;
+    }
+
+    public List<Immortal> getImmortals() {
+        return immortals;
+    }
+
+    public void setImmortals(List<Immortal> immortals) {
+        this.immortals = immortals;
+    }
+
+    public int getNumOfImmortals() {
+        return Integer.parseInt(numOfImmortals.getText());
+    }
+
+    public void setNumOfImmortals(JTextField numOfImmortals) {
+        this.numOfImmortals = numOfImmortals;
+    }
+
+    public boolean isStop() {
+        return immortals.get(0).isStop();
+    }
 }
 
 class TextAreaUpdateReportCallback implements ImmortalUpdateReportCallback{
 
     JTextArea ta;
     JScrollPane jsp;
+    private List<Immortal> immortals;
 
     public TextAreaUpdateReportCallback(JTextArea ta,JScrollPane jsp) {
         this.ta = ta;
@@ -200,5 +257,5 @@ class TextAreaUpdateReportCallback implements ImmortalUpdateReportCallback{
         );
 
     }
-    
+
 }

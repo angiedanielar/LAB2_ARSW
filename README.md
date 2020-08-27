@@ -112,7 +112,7 @@ _Implementamos la función STOP, con una bandera para saber si el juego se encue
 ### Pruebas ✅ 
  * Debería cumplirse el invariante al pausar y al reiniciar, entonces se prueba el invariante junto a estas dos funciones. 
  * Debería detenerse el juego y este no debería estar detenido al comenzar.
- * Deberían eliminarse los jugadores muertos de la lista de jugadores y deberían volver nuevos jugadores al reiniciar el juego. 
+ * Deberían volver nuevos jugadores al reiniciarse el juego. 
 
 
 ![alt text](https://raw.githubusercontent.com/angiedanielar/LAB2_ARSW/master/img/12.png)

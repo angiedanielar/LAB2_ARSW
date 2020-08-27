@@ -98,9 +98,4 @@ public class ImmortalTest {
         }
     }
 
-    /*@Test
-    public void deberiaReducirseLaListaAlEliminarJugadoresMuertos() {
-
-    }*/
-
 }
